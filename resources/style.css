@@ -3,23 +3,25 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.LOGO {
-  margin-left: 100px;
+.page1 {
+  height: 100vh;
 }
 
+.LOGO {
+float: left;
+min-width: 150px;
+max-width: 200px;
+}
 
 header {
-  background-color: rgba(70, 70, 70, 0);
-  display: flex;
-  position: relative;
-  align-items: center;
-  height: 180px;
-  width: 100%;
+  background: rgba(0, 0, 0, 0);
+  margin-top: 20px;
 }
 
-nav {
-  display: flex;
-  margin-right: 100px;
+header::after {
+  content: '';
+  display: table;
+  clear: both;
 }
 
 nav a {
@@ -27,32 +29,42 @@ nav a {
   color: white;
 }
 
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-nav span {
-    display: inline-block;
+nav {
+  float: right;
+}
+
+nav li {
     padding: 20px 30px;
     font-size: 15px;
     font-weight: bold;
+    display: inline-block;
+    padding-top: 50px;
 }
 
 .LOGO1 {
-  display: flex;
+  width: 80%;
+  margin: 0 auto;
 }
 
 
 
-span a {
+li > a {
   position: relative;
   color: #12f7e2;
   text-decoration: none;
 }
 
-span a:hover {
-  color: #e04040;
+li > a:hover {
+  color: #12f7e2;
 }
 
-
-span a:before {
+li > a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -67,11 +79,14 @@ span a:before {
   transition: all 0.3s ease-in-out 0s;
 }
 
-span a:hover:before {
+li > a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
+
+
+
 
 
 .h12 {
@@ -119,8 +134,13 @@ color: #12f7e2;
 
 #particles-js {
   background: #464646;
-  height: 760px;
-  margin-top: -180px
+  height: 200vh;
+  margin-top: -135px
+}
+
+.particles-js-canvas-el {
+  margin-top: -135px;
+  height: 200vh;
 }
 
 
@@ -133,24 +153,6 @@ color: #12f7e2;
 .j-jack {
   color: #12f7e2;
 }
-
-
-
-.make-logo {
-  font-size: 200px;
-  text-align: center
-}
-
-
-.j {
-  color: #e04040;
-}
-
-
-.j2 {
-  color: #12f7e2;
-}
-
 
 .downArrow{
 	position: absolute;
@@ -226,4 +228,31 @@ color: #2ecc71;
 
 .arrowe a {
   border-width: 0px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+    background-color: 0;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
 }
